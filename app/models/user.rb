@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles, dependent: :destroy
+  has_many :favorites
+  has_many :favorite_articles, through: :favorites, source: :article 
 end
