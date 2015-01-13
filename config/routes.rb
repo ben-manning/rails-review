@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :articles#, only: [:new, :create, :destroy]
-  get 'welcome/index'# => 'welcome#index'
 
   root 'welcome#index'
+  resources :users, only: :index
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -59,4 +60,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
