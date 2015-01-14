@@ -26,6 +26,10 @@ class ArticlesController < ApplicationController
 	def index
 		@user = User.find(params[:user_id])
 		@articles = @user.articles
+		@favorites = @user.favorite_articles
+
+
+		# @user.favorite_articles << @articles[0]
 	end
 
 	# Find specific article to edit
